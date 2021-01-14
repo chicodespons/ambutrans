@@ -1,7 +1,7 @@
 from flask import escape, request, render_template, url_for, flash, redirect
 from app import app, db, bcrypt
-from app.forms import RegistrationForm, LoginForm
-from app.models import User, Post
+from app.forms import RegistrationForm, LoginForm, PatientForm
+from app.models import User
 from flask_login import login_user, login_required
 
 @app.route('/', methods = ['Get', 'POST'])
