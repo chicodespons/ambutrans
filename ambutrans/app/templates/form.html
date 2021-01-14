@@ -34,53 +34,124 @@
       <div class="row">
         <div class="col border border-dark">
           <h2 class="text-center font-weight-bold py-5">Identificatie van de Patiënt</h2>
-          <div class="row">
-            <div class="col">
-              <div class="form-group">
-              <label for="voornaam">Voornaam</label>
-              <input type="text" class="form-control" id="voornaam" placeholder="Dirk">
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <label for="naam">Naam</label>
-                <input type="text" class="form-control" id="naam" placeholder="Dedonder">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="form-group">
-                <label for="rijksregisternummer">Rijksregisternummer</label>
-                <input type="text" class="form-control" id="rijksregisternummer" placeholder="91.10.07-293.23">
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <label for="geslacht">Geslacht</label>
-                <select class="form-control" id="geslacht">
-                  <option selected>M</option>
-                  <option value="1">V</option>
-                  <option value="2">X</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="form-group">
-                <label for="vanZiekenhuis">Van Ziekenhuis</label>
-                <input type="text" class="form-control" id="vanZiekenhuis" placeholder="Ziekenhuis">
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                <label for="naarZiekenhuis">Naar Ziekenhuis</label>
-                <input type="text" class="form-control" id="naarZiekenhuis" placeholder="Ziekenhuis">
-              </div>
-            </div>
-          </div>
+          <form method="POST" action="">
+            {{ patientform.hidden_tag() }} 
 
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                {{ patientform.first_name.label(class="form-control-label", placeholder="Dirk") }}
+                     
+                      {% if patientform.first_name.errors %}
+                      {{ patientform.first_name(class="form-control is-invalid", placeholder="Dirk") }}
+  
+                      <div class="invalid-feedback">
+                        {% for error in patientform.first_name.errors %}
+                             <span>{{ error }}</span>
+                        {% endfor%}
+                      </div>
+                      {% else %}
+                      {{ patientform.first_name(class="form-control", placeholder="Dirk") }}
+  
+                      {% endif%}
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                {{ patientform.last_name.label(class="form-control-label", placeholder="Dedonder") }}
+
+                       {% if patientform.last_name.errors %}
+                       {{ patientform.last_name(class="from-control is-invalid", placeholder="Dedonder")}}
+
+                       <div class="invalid-feedback">
+                        {% for error in patientform.last_name.errors %}
+                             <span>{{ error }}</span>
+                        {% endfor%}
+                      </div>
+                      {% else %}
+                      {{ patientform.last_name(class="form-control", placeholder="Dedonder") }}
+  
+                      {% endif%}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                {{ patientform.rijksregisternummer.label(class="form-control-label", placeholder="91100729323") }}
+
+                       {% if patientform.rijksregisternummer.errors %}
+                       {{ patientform.rijksregisternummer(class="from-control is-invalid", placeholder="91100729323")}}
+
+                       <div class="invalid-feedback">
+                        {% for error in patientform.rijksregisternummer.errors %}
+                             <span>{{ error }}</span>
+                        {% endfor%}
+                      </div>
+                      {% else %}
+                      {{ patientform.rijksregisternummer(class="form-control", placeholder="91100729323") }}
+  
+                      {% endif%}
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                {{ patientform.sex.label(class="form-control-label", placeholder="M") }}
+
+                       {% if patientform.sex.errors %}
+                       {{ patientform.sex(class="from-control is-invalid", placeholder="M")}}
+
+                       <div class="invalid-feedback">
+                        {% for error in patientform.sex.errors %}
+                             <span>{{ error }}</span>
+                        {% endfor%}
+                      </div>
+                      {% else %}
+                      {{ patientform.sex(class="form-control", placeholder="M") }}
+  
+                      {% endif%}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                {{ patientform.from_hospital.label(class="form-control-label", placeholder="UZ Brussel") }}
+
+                       {% if patientform.from_hospital.errors %}
+                       {{ patientform.from_hospital(class="from-control is-invalid", placeholder="UZ Brussel")}}
+
+                       <div class="invalid-feedback">
+                        {% for error in patientform.from_hospital.errors %}
+                             <span>{{ error }}</span>
+                        {% endfor%}
+                      </div>
+                      {% else %}
+                      {{ patientform.from_hospital(class="form-control", placeholder="UZ Brussel") }}
+  
+                      {% endif%}
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                {{ patientform.too_hospital.label(class="form-control-label", placeholder="UZ Brussel") }}
+
+                       {% if patientform.too_hospital.errors %}
+                       {{ patientform.too_hospital(class="from-control is-invalid", placeholder="UZ Brussel")}}
+
+                       <div class="invalid-feedback">
+                        {% for error in patientform.too_hospital.errors %}
+                             <span>{{ error }}</span>
+                        {% endfor%}
+                      </div>
+                      {% else %}
+                      {{ patientform.too_hospital(class="form-control", placeholder="UZ Brussel") }}
+  
+                      {% endif%}
+              </div>
+            </div>
+          </div>
+        
 
           <!-- col 2 en drie van rij 1: dus hier nog rijen invoegen met collomen-->
         </div>
@@ -90,22 +161,19 @@
             <div class="col">
               <div class="form-check">
               <p class="font-weight-bold py-1">Question 1: Airway?</p>
-                <input class="form-check-input" type="radio" name="airway" id="airway" value="option1">
-                <label class="form-check-label" for="airway">
-                  No
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="airway" id="airway" value="option2">
-                <label class="form-check-label" for="airway">
-                  Oropharyngeal tube
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="airway" id="airway" value="option3">
-                <label class="form-check-label" for="airway">
-                  Intubated or tracheostomy present
-                </label>
+
+              {% if patientform.airway.errors %}
+              {{ patientform.airway(class="from-check is-invalid")}}
+
+              <div class="invalid-feedback">
+               {% for error in patientform.airway.errors %}
+                    <span>{{ error }}</span>
+               {% endfor%}
+             </div>
+             {% else %}
+             {{ patientform.airway(class="form-check") }}
+
+             {% endif%} 
               </div>
             </div>
             <div class="col">
@@ -319,6 +387,7 @@
                 </div>
             </div>
           </div>
+        </form>
           <div class="row">
             <p><small>*Group 1 support includes: Inotropes, vasodilators, antiarrhythmics,
               bicarbonate, analgesics, anti-seizure, steroids, mannitol, thrombolytics, 

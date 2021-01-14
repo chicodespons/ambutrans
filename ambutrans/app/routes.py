@@ -28,8 +28,10 @@ def index():
 
     return render_template('index.html', formsignup=formsignup, formslogin=formslogin)
 
-@app.route('/form')
+@app.route('/form', methods =['Get', 'Post'])
 @login_required
 def form():
+    patientform = PatientForm()
 
-    return render_template('form.html')
+    
+    return render_template('form.html', patientform=patientform)

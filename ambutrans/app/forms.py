@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField, SelectField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField, SelectField, RadioField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from app.models import User
 
@@ -53,5 +53,7 @@ class PatientForm(FlaskForm):
     from_hospital = StringField('Ziekenhuis vertrek', validators=[DataRequired(), Length(min=2, max=40)])
 
     too_hospital = StringField('Ziekenhuis aankomst', validators=[DataRequired(), Length(min=2, max=40)])
+
+    airway = RadioField('Vraag 1: Luchtweg', choices = [('1', 'No'), ('2', 'Oropharyngeal tube'), ('3', 'Intubated or tracheostomy present')])
 
 
