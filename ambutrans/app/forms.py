@@ -40,15 +40,15 @@ class LoginForm(FlaskForm):
     
     submit = SubmitField('Login')
 
-class PatientForm(flaskForm):
+class PatientForm(FlaskForm):
 
     first_name = StringField('Voornaam', validators=[DataRequired(), Length(min=2, max=20)])
     
     last_name= StringField('Achternaam', validators=[DataRequired(), Length(min=2, max=40)])
 
-    rijksregisternummer = IntegerField('Rijksregisternr', validators=[DataRequired, Length(min=11, max=11)])
+    rijksregisternummer = IntegerField('Rijksregisternr', validators=[DataRequired(), Length(min=11, max=11)])
 
-    sex = SelectField('Geslact', validators=[DataRequired, choices = SEX_CHOICES])
+    sex = SelectField('Geslacht', choices = SEX_CHOICES)
 
     from_hospital = StringField('Ziekenhuis vertrek', validators=[DataRequired(), Length(min=2, max=40)])
 
