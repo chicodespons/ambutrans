@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="">
+    <title>Form identificatie</title>
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{url_for('index')}}">Blulight</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('index')}}">Home</a> 
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <body>
+    <div class="container-fluid">
+      <div class="row bg-info">
+        <div class="col">
+          <h1 class="text-center text-uppercase font-weight-bold py-5">Ambutrans</h1>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col border border-dark">
+          <h2 class="text-center font-weight-bold py-5">Identificatie van de Patiënt</h2>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+              <label for="voornaam">Voornaam</label>
+              <input type="text" class="form-control" id="voornaam" placeholder="Dirk">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="naam">Naam</label>
+                <input type="text" class="form-control" id="naam" placeholder="Dedonder">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="rijksregisternummer">Rijksregisternummer</label>
+                <input type="text" class="form-control" id="rijksregisternummer" placeholder="91.10.07-293.23">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="geslacht">Geslacht</label>
+                <select class="form-control" id="geslacht">
+                  <option selected>M</option>
+                  <option value="1">V</option>
+                  <option value="2">X</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="vanZiekenhuis">Van Ziekenhuis</label>
+                <input type="text" class="form-control" id="vanZiekenhuis" placeholder="Ziekenhuis">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="naarZiekenhuis">Naar Ziekenhuis</label>
+                <input type="text" class="form-control" id="naarZiekenhuis" placeholder="Ziekenhuis">
+              </div>
+            </div>
+          </div>
+
+
+          <!-- col 2 en drie van rij 1: dus hier nog rijen invoegen met collomen-->
+        </div>
+        <div class="col border border-dark">
+          <h2 class="text-center font-weight-bold py-5">Patient Factors for Risk Measurement</h2>
+          <div class="row">
+            <div class="col">
+              <div class="form-check">
+              <p class="font-weight-bold py-1">Question 1: Airway?</p>
+                <input class="form-check-input" type="radio" name="airway" id="airway" value="option1">
+                <label class="form-check-label" for="airway">
+                  No
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="airway" id="airway" value="option2">
+                <label class="form-check-label" for="airway">
+                  Oropharyngeal tube
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="airway" id="airway" value="option3">
+                <label class="form-check-label" for="airway">
+                  Intubated or tracheostomy present
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <p class="font-weight-bold py-2">Question 2: Respitory rate (breaths/min)?</p>
+                  <input class="form-check-input" type="radio" name="rr" id="rr" value="option1">
+                  <label class="form-check-label" for="rr">
+                    10-14 breaths/min
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rr" id="rr" value="option2">
+                  <label class="form-check-label" for="rr">
+                    15-35 breaths/min
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rr" id="rr" value="option3">
+                  <label class="form-check-label" for="rr">
+                    <10 breaths/min
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rr" id="rr" value="option4">
+                  <label class="form-check-label" for="rr">
+                    >35 breaths/min
+                  </label>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-check">
+                <p class="font-weight-bold py-2">Question 3: Hemodynamics?</p>
+                  <input class="form-check-input" type="radio" name="hemodynamics" id="hemodynamics" value="option1">
+                  <label class="form-check-label" for="hemodynamics">
+                    Stable
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="hemodynamics" id="hemodynamics" value="option2">
+                  <label class="form-check-label" for="hemodynamics">
+                    Moderately stable
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="hemodynamics" id="hemodynamics" value="option3">
+                  <label class="form-check-label" for="hemodynamics">
+                    Unstable
+                  </label>
+                </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <p class="font-weight-bold py-2">Question 4: Arrhythmias?</p>
+                  <input class="form-check-input" type="radio" name="arrhythmias" id="arrhythmias" value="option1">
+                  <label class="form-check-label" for="arrhythmias">
+                    None
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="arrhythmias" id="arrhythmias" value="option2">
+                  <label class="form-check-label" for="arrhythmias">
+                    Non-life threatening or >48hrs post AMI
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="arrhythmias" id="arrhythmias" value="option3">
+                  <label class="form-check-label" for="arrhythmias">
+                    Life-threatening or <48hrs post AMI
+                  </label>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-check">
+                <p class="font-weight-bold py-2">Question 5: Glasgow coma scale?</p>
+                  <input class="form-check-input" type="radio" name="gcs" id="gcs" value="option1">
+                  <label class="form-check-label" for="gcs">
+                    15/15
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gcs" id="gcs" value="option2">
+                  <label class="form-check-label" for="gcs">
+                    8/15 - 14/15
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gcs" id="gcs" value="option3">
+                  <label class="form-check-label" for="gcs">
+                    <8/15
+                  </label>
+                </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <p class="font-weight-bold py-2">Question 6: Prematurity?</p>
+                  <input class="form-check-input" type="radio" name="prem" id="prem" value="option1">
+                  <label class="form-check-label" for="prem">
+                    Newborn >2000g
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="prem" id="prem" value="option2">
+                  <label class="form-check-label" for="prem">
+                    Newborn 1200g - 2000g
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="prem" id="prem" value="option3">
+                  <label class="form-check-label" for="prem">
+                    Newborn
+                  </label>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col border border-dark">
+          <h2 class="text-center font-weight-bold py-5">Patient Factors for Risk Measurement</h2>
+          <div class="row">
+            <div class="col">
+              <div class="form-check">
+              <p class="font-weight-bold py-1">Question 1: EKG necessity?</p>
+                <input class="form-check-input" type="radio" name="ekg" id="ekg" value="option1">
+                <label class="form-check-label" for="ekg">
+                  No
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ekg" id="ekg" value="option2">
+                <label class="form-check-label" for="ekg">
+                  Desirable
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ekg" id="ekg" value="option3">
+                <label class="form-check-label" for="ekg">
+                  Mandatory
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <p class="font-weight-bold py-2">Question 2: IV acces necessity?</p>
+                  <input class="form-check-input" type="radio" name="iv" id="iv" value="option1">
+                  <label class="form-check-label" for="iv">
+                    No
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="iv" id="iv" value="option2">
+                  <label class="form-check-label" for="iv">
+                    Yes
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="iv" id="iv" value="option3">
+                  <label class="form-check-label" for="iv">
+                    Swan-Ganz catheter
+                  </label>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-check">
+                <p class="font-weight-bold py-2">Question 3: Temporary pacemaker?</p>
+                  <input class="form-check-input" type="radio" name="pacemaker" id="pacemaker" value="option1">
+                  <label class="form-check-label" for="pacemaker">
+                    No
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="pacemaker" id="pacemaker" value="option2">
+                  <label class="form-check-label" for="pacemaker">
+                    Yes, non-invasive
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="pacemaker" id="pacemaker" value="option3">
+                  <label class="form-check-label" for="pacemaker">
+                    Yes, with endocavity leads
+                  </label>
+                </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <p class="font-weight-bold py-2">Question 4: Pharmalogical or device support?</p>
+                  <input class="form-check-input" type="radio" name="support" id="support" value="option1">
+                  <label class="form-check-label" for="support">
+                    None
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="support" id="support" value="option2">
+                  <label class="form-check-label" for="support">
+                    Group 1
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="support" id="support" value="option3">
+                  <label class="form-check-label" for="support">
+                    Group 2
+                  </label>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <p><small>*Group 1 support includes: Inotropes, vasodilators, antiarrhythmics,
+              bicarbonate, analgesics, anti-seizure, steroids, mannitol, thrombolytics, 
+              naloxone, suction, or chest tube(s)
+              *Group 2 support includes: Inotropes and vasodilators together, 
+              military anti-shock trousers, general anesthetics, or uterine relaxants. 
+              The authors also propose extracorporeal life support in this category</small></p>
+          </div>
+        </div>
+
+        <div class="col border border-dark"></div>
+      </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+      
+
+
+      </div>
+    </div>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
